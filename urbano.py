@@ -137,16 +137,18 @@ def main():
     # Loop until json_list is empty; show next definition upon spacebar event
     while True:
 
+        ch  =   getch()
+
         if len(json_list) == 0:
             break
 
-        elif getch() == ' ':
+        elif ch == ' ':
             
             defcnt  =   print_data(json_list[0], defcnt, keys)
             
             json_list.pop(0)
 
-        elif getch() == 'q':
+        elif ch == 'q':
             break
 
 
