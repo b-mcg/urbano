@@ -12,6 +12,8 @@ To quit press:
 
     q
 
+For right now q has to be pressed twice until I have time to figure out how to fix it.
+
 Donations:
 
     Bitcoin:
