@@ -140,14 +140,15 @@ def main():
         if len(json_list) == 0:
             break
 
-        elif getch() == 'q':
-            break
-
         elif getch() == ' ':
             
             defcnt  =   print_data(json_list[0], defcnt, keys)
             
             json_list.pop(0)
+
+        elif getch() == 'q':
+            break
+
 
 
 
