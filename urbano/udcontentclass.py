@@ -25,10 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
 
-# Version number
-VERSION         =       'v0.0.1'
-
-
 class UD(object):
     """
     Urban Dictionary API interface
@@ -53,7 +49,7 @@ class UD(object):
         from GET request.
 
         """
-        with closing(requests.get(self.url.format(self.word))) as res:
+        with closing(requests.get(self.url.format(self.word.replace(' ', '+')))) as res:
             if res.status_code != 200:
                 print "\nError: Non 200 status code returned: {0}\n".format(res.status)
                 sys.exit(1)
