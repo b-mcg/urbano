@@ -10,7 +10,7 @@ from urbano.udcontentclass import UD
 __Author__ = "b-mcg"
 __Email__ = "b-mcg0890@gmail.com"
 __License__ = """
-Copyright (C) 2014-2016  b-mcg   <b-mcg0890@gmail.com>
+Copyright (C) 2014-2016  b-mcg   <bmcg0890@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 # Version number
-VERSION     =       'v0.0.1'
+VERSION     =       'v0.0.1-1'
 
 
 def build_opts():
@@ -39,7 +39,7 @@ def build_opts():
     parser      =       argparse.ArgumentParser(description='urbano command line options.')
 
     # Add word option
-    parser.add_argument('word', type=str,
+    parser.add_argument('word', type=str, nargs='+',
                 help='word to lookup the definition for.',
                 metavar=''
                 )
@@ -115,7 +115,7 @@ def main():
     """
     args    =   arg_parser(build_opts())
 
-    ud      =   UD(args['w'])
+    ud      =   UD(' '.join(args['w']))
 
 
     json    =   ud.grabJSON()
